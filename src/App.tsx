@@ -5,6 +5,8 @@ function App() {
   return (
     <>
       <MyComponent text={'hello1'}/>
+      <MyComponent text={'hello2'}/>
+      <MyComponent text={'hello3'}/>
     {/*це те саме*/}
     {/*    {MyComponent({text:'hello2'})}*/}
     </>
