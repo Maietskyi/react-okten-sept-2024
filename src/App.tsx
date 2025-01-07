@@ -1,16 +1,14 @@
 import './App.css'
-import MyComponent from "./components/MyComponent.tsx";
+import {simpsons} from "./data/simsonList.ts";
+import MySimpson from "./components/my-person/My-simpson.tsx";
 
 function App() {
-  return (
+    return (
     <>
-      <MyComponent title={'hello1'}>
-          Lorem ipsum dolor sit amet.
-      </MyComponent>
-      <MyComponent title={'hello2'}/>
-      <MyComponent title={'hello3'}/>
-    {/*це те саме*/}
-    {/*    {MyComponent({text:'hello2'})}*/}
+        {
+            simpsons.map((simpson,index)=> <MySimpson key={index} simpson={simpson}/>
+            )
+        }
     </>
   )
 }
