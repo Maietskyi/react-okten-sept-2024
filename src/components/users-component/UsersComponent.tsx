@@ -1,6 +1,7 @@
 import {IUser} from "../../models/IUser.ts";
 import UserComponent from "../user-component/UserComponent.tsx";
 import {useEffect, useState} from "react";
+import {getUsers} from "../../services/api.service.ts";
 
 const UsersComponent = () => {
     //   Так постійно рендерить сторінку
@@ -12,8 +13,7 @@ const UsersComponent = () => {
     const [users, setUsers] = useState<IUser[]>([]);
 
     useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then(value => value.json())
+        getUsers()
             .then(response => {
                 setUsers(response);
             });
