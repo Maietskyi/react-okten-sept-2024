@@ -1,5 +1,6 @@
 import {IUser} from "../models/IUser.ts";
 
+// Можна через const
 // const baseUrl = import.meta.env.VITE_API_URL;
 
 export const getUsers = async (): Promise<IUser[]> => {
