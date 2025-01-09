@@ -11,6 +11,7 @@ const UsersComponent = () => {
 //       setUsers(response);
 //     });
     const [users, setUsers] = useState<IUser[]>([]);
+    const [loading, setLoading] = useState<IUser | null>(null);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -22,11 +23,18 @@ const UsersComponent = () => {
         return () => {
             console.log('done')
         }
-    }, [])
+    }, []);
+
+    const foo = (item: IUser) => {
+        setLoading(item);
+    }
     return (
         <div>
+                {
+                    loading && <div>{JSON.stringify(loading)}</div>
+                }
             {
-                users.map(user => <UserComponent key={user.id} item={user}/>)
+                users.map(user => <UserComponent foo={foo} key={user.id} item={user}/>)
             }
         </div>
     );
