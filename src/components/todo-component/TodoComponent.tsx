@@ -1,5 +1,6 @@
 import {ITodo} from "../../models/ITodo.ts";
 import {FC} from "react";
+import './TodoComponent.css'
 
 type TodoPropType = {
     item:ITodo;
@@ -9,7 +10,7 @@ type TodoPropType = {
 export const TodoComponent:FC<TodoPropType>=({item,foo})=>{
     return(
         <>
-    <div>{item.id}</div>
+    <h2 className={item.completed? 'complete' : 'none-complete'}>{item.id}</h2>
     <button onClick={()=>foo(item)}>
         Details
     </button>

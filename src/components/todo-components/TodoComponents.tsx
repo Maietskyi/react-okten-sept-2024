@@ -10,8 +10,7 @@ export const TodoComponents = () => {
 
     useEffect(()=>{
         const fetchData = async () => {
-            const todos = await getTodos();
-            setTodos(todos)
+            getTodos().then(({todos})=>setTodos(todos));
         }
         fetchData();
     },[]);
