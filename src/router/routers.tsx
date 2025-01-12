@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.tsx";
 import HomePage from "../pages/HomePage.tsx";
 import UsersPage from "../pages/UsersPage.tsx";
 import PostsPage from "../pages/PostsPage.tsx";
+import SingleUsersDetailsPage from "../pages/SingleUsersDetailsPage.tsx";
 
 
 export const routers = createBrowserRouter([
@@ -10,6 +11,7 @@ export const routers = createBrowserRouter([
         children:[
             {path: '',element:<HomePage/>},
             {path: 'users', element:<UsersPage/>},
+            {path: 'users/details', element:<SingleUsersDetailsPage/>},
             {path: 'posts', element:<PostsPage/>}
         ]
     },

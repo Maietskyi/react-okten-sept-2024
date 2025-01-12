@@ -1,5 +1,6 @@
 import {FC} from "react";
 import {IUser} from "../../models/IUser.ts";
+import {Link} from "react-router-dom";
 
 type UserTypeProps = {
     item: IUser;
@@ -8,9 +9,9 @@ type UserTypeProps = {
 const UserComponent: FC<UserTypeProps> = ({item}) => {
     return (
         <div>
-            {
-                item.username
-            }
+            <Link to={'details'} state={
+                item
+            }>{item.username}</Link>
         </div>
     );
 };
