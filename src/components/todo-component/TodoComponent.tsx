@@ -7,7 +7,7 @@ interface TodoComponentProps{
 export const TodoComponent =({item}:TodoComponentProps)=>{
     return (
         <div>
-            <h3 className={item.completed? 'complete' : 'none-complete'}>{item.title}</h3>
+            <h3 className={item.completed? 'complete' : 'none-complete'}>{item.todo}</h3>
         </div>
     );
 };
